@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b14" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4f4fa" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Zone Gamer · Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="login" class="login hidden">
+    <form id="login-form" class="card login-card">
+      <h1>Zone <span>Gamer</span> Admin</h1>
+      <p id="login-note" class="sub"></p>
+      <label>Email<input name="email" type="email" required autocomplete="username" /></label>
+      <label>Password<input name="password" type="password" required autocomplete="current-password" /></label>
+      <p id="login-error" class="error" role="alert"></p>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <div id="topbar" class="topbar">
+      <button id="menu" class="btn icon" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="brand">Zone <span>Gamer</span></div>
+    </div>
+    <div id="scrim" class="scrim"></div>
+    <aside id="sidebar">
+      <div class="brand">Zone <span>Gamer</span></div>
+      <nav id="nav" aria-label="Sections"></nav>
+      <button id="logout" class="btn ghost">Log out</button>
+    </aside>
+    <main>
+      <header>
+        <div class="title-row">
+          <h2 id="title"></h2>
+          <button id="refresh" class="btn icon" title="Refresh" aria-label="Refresh">↻</button>
+          <span id="updated" class="sub"></span>
+        </div>
+        <div id="actions"></div>
+      </header>
+      <section id="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="card" id="modal-body"></div></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="admin.js" type="module"></script>
+</body>
+</html>
